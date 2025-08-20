@@ -98,19 +98,19 @@ recipes: List[Recipe] = [
         #     last_run=recipe.last_run, hours=6, drift=0
         # ),
     ),
-    CustomOptionsRecipe(
-        recipe="972",
-        slug="972",
-        src_ext="mobi",
-        target_ext=["epub"],
-        category="News",
-        tags=["news", "jewish", "commentary", "politics", "editorial"],
-        overwrite_cover=True,
-        cover_options=CustomCoverOptions(logo_path_or_url="recipes_custom/logos/972-logo.png"),
-        enable_on=lambda recipe: every_x_days(
-            last_run=recipe.last_run, days=1, drift=0
-        ),
-    ),
+    # CustomOptionsRecipe(
+    #     recipe="972",
+    #     slug="972",
+    #     src_ext="mobi",
+    #     target_ext=["epub"],
+    #     category="News",
+    #     tags=["news", "jewish", "commentary", "politics", "editorial"],
+    #     overwrite_cover=True,
+    #     cover_options=CustomCoverOptions(logo_path_or_url="recipes_custom/logos/972-logo.png"),
+    #     enable_on=lambda recipe: every_x_days(
+    #         last_run=recipe.last_run, days=1, drift=0
+    #     ),
+    # ),
     # CustomOptionsRecipe(
     #     recipe="advocate",
     #     slug="advocate",
@@ -170,33 +170,33 @@ recipes: List[Recipe] = [
     #         last_run=recipe.last_run, days=1, drift=0
     #     ),
     # ),
-    CustomOptionsRecipe(
-        recipe="assigned-media",
-        slug="assigned-media",
-        src_ext="mobi",
-        target_ext=["epub"],
-        category="News",
-        tags=["lgbtq", "trans", "news"],
-        overwrite_cover=True,
-        cover_options=CustomCoverOptions(
-            # logo_path_or_url="recipes_custom/logos/Assigned.jpg"
-            logo_path_or_url="https://images.squarespace-cdn.com/content/v1/633303d5ccf756402b93f25c/72772a0c-8d81-4f03-8f39-fed9eebd769a/Assigned+Media+Logo+flat.png"
-        ),
-        enable_on=True,
-    ),
-    CustomOptionsRecipe(
-        recipe="badtransday",
-        slug="badtransday",
-        src_ext="mobi",
-        target_ext=["epub"],
-        category="Blogs",
-        tags=["lgbtq", "trans", "news", "commentary"],
-        overwrite_cover=True,
-        cover_options=CustomCoverOptions(
-            logo_path_or_url="https://trans.cx/wp-content/uploads/2025/03/zbtd-preview-default-1.png"
-        ),
-        enable_on=True,
-    ),
+    # CustomOptionsRecipe(
+    #     recipe="assigned-media",
+    #     slug="assigned-media",
+    #     src_ext="mobi",
+    #     target_ext=["epub"],
+    #     category="News",
+    #     tags=["lgbtq", "trans", "news"],
+    #     overwrite_cover=True,
+    #     cover_options=CustomCoverOptions(
+    #         # logo_path_or_url="recipes_custom/logos/Assigned.jpg"
+    #         logo_path_or_url="https://images.squarespace-cdn.com/content/v1/633303d5ccf756402b93f25c/72772a0c-8d81-4f03-8f39-fed9eebd769a/Assigned+Media+Logo+flat.png"
+    #     ),
+    #     enable_on=True,
+    # ),
+    # CustomOptionsRecipe(
+    #     recipe="badtransday",
+    #     slug="badtransday",
+    #     src_ext="mobi",
+    #     target_ext=["epub"],
+    #     category="Blogs",
+    #     tags=["lgbtq", "trans", "news", "commentary"],
+    #     overwrite_cover=True,
+    #     cover_options=CustomCoverOptions(
+    #         logo_path_or_url="https://trans.cx/wp-content/uploads/2025/03/zbtd-preview-default-1.png"
+    #     ),
+    #     enable_on=True,
+    # ),
     # CustomOptionsRecipe(
     #     recipe="duolingo-blog",
     #     slug="duolingo-blog",
@@ -213,61 +213,61 @@ recipes: List[Recipe] = [
     #         logo_path_or_url="recipes_custom/logos/duolingo-green.png"
     #     ),
     # ),
-    CustomOptionsRecipe(
-        recipe="erin",
-        slug="erin",
-        src_ext="mobi",
-        target_ext=["epub"],
-        category="News",
-        overwrite_cover=True,
-        tags=["news", "trans", "lgbtq"],
-        cover_options=CustomCoverOptions(
-            logo_path_or_url="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Transgender_Pride_flag.svg/1024px-Transgender_Pride_flag.svg.png"
-        ),
-        enable_on=True
-    ),
-    CustomOptionsRecipe(
-        recipe="the-forward",
-        slug="the-forward",
-        src_ext="mobi",
-        target_ext=["epub"],
-        category="Jewish",
-        tags=["editorial", "commentary", "news", "jewish", "religion"],
-        overwrite_cover=True,
-        enable_on=lambda recipe: every_x_days(
-            last_run=recipe.last_run, days=1, drift=0
-        ),
-        cover_options=CustomCoverOptions(
-            logo_path_or_url="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/The_Forward_logo_2022.svg/1024px-The_Forward_logo_2022.svg.png"
-        ),
-    ),
-    CustomOptionsRecipe(
-        recipe="gender-analysis",
-        slug="gender-analysis",
-        src_ext="mobi",
-        target_ext=["epub"],
-        category="Blogs",
-        overwrite_cover=True,
-        tags=["science", "trans", "lgbtq", "news"],
-        enable_on=False,
-        cover_options=CustomCoverOptions(
-            # logo_path_or_url="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Transgender_Pride_flag.svg/1024px-Transgender_Pride_flag.svg.png"
-            logo_path_or_url="https://genderanalysis.net/wp-content/uploads/2017/05/newgabanner.png"
-        ),
-    ),
-    CustomOptionsRecipe(
-        recipe="jewish-currents",
-        slug="jewish-currents",
-        src_ext="mobi",
-        target_ext=["epub"],
-        category="Jewish",
-        tags=["news", "jewish", "commentary", "politics", "editorial"],
-        overwrite_cover=True,
-        cover_options=CustomCoverOptions(
-            logo_path_or_url="recipes_custom/logos/jewish-currents.png"
-        ),
-        enable_on=True,
-    ),
+    # CustomOptionsRecipe(
+    #     recipe="erin",
+    #     slug="erin",
+    #     src_ext="mobi",
+    #     target_ext=["epub"],
+    #     category="News",
+    #     overwrite_cover=True,
+    #     tags=["news", "trans", "lgbtq"],
+    #     cover_options=CustomCoverOptions(
+    #         logo_path_or_url="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Transgender_Pride_flag.svg/1024px-Transgender_Pride_flag.svg.png"
+    #     ),
+    #     enable_on=True
+    # ),
+    # CustomOptionsRecipe(
+    #     recipe="the-forward",
+    #     slug="the-forward",
+    #     src_ext="mobi",
+    #     target_ext=["epub"],
+    #     category="Jewish",
+    #     tags=["editorial", "commentary", "news", "jewish", "religion"],
+    #     overwrite_cover=True,
+    #     enable_on=lambda recipe: every_x_days(
+    #         last_run=recipe.last_run, days=1, drift=0
+    #     ),
+    #     cover_options=CustomCoverOptions(
+    #         logo_path_or_url="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/The_Forward_logo_2022.svg/1024px-The_Forward_logo_2022.svg.png"
+    #     ),
+    # ),
+    # CustomOptionsRecipe(
+    #     recipe="gender-analysis",
+    #     slug="gender-analysis",
+    #     src_ext="mobi",
+    #     target_ext=["epub"],
+    #     category="Blogs",
+    #     overwrite_cover=True,
+    #     tags=["science", "trans", "lgbtq", "news"],
+    #     enable_on=False,
+    #     cover_options=CustomCoverOptions(
+    #         # logo_path_or_url="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Transgender_Pride_flag.svg/1024px-Transgender_Pride_flag.svg.png"
+    #         logo_path_or_url="https://genderanalysis.net/wp-content/uploads/2017/05/newgabanner.png"
+    #     ),
+    # ),
+    # CustomOptionsRecipe(
+    #     recipe="jewish-currents",
+    #     slug="jewish-currents",
+    #     src_ext="mobi",
+    #     target_ext=["epub"],
+    #     category="Jewish",
+    #     tags=["news", "jewish", "commentary", "politics", "editorial"],
+    #     overwrite_cover=True,
+    #     cover_options=CustomCoverOptions(
+    #         logo_path_or_url="recipes_custom/logos/jewish-currents.png"
+    #     ),
+    #     enable_on=True,
+    # ),
     # CustomOptionsRecipe(
     #     recipe="jta",
     #     slug="jta",
@@ -291,21 +291,21 @@ recipes: List[Recipe] = [
         enable_on=onlyon_weekdays([3, 4, 5, 6], -4),
         # enable_on=False,
     ),
-    CustomOptionsRecipe(
-        recipe="life-is-a-sacred-text",
-        slug="life-is-a-sacred-text",
-        src_ext="mobi",
-        target_ext=["epub"],
-        category="Jewish",
-        cover_options=CustomCoverOptions(
-            logo_path_or_url="recipes_custom/logos/life.png"
-        ),
-        # enable_on=True,
-        enable_on=lambda recipe: every_x_hours(
-            last_run=recipe.last_run, hours=12, drift=0
-        ),
-        tags=["religion", "jewish"],
-    ),
+    # CustomOptionsRecipe(
+    #     recipe="life-is-a-sacred-text",
+    #     slug="life-is-a-sacred-text",
+    #     src_ext="mobi",
+    #     target_ext=["epub"],
+    #     category="Jewish",
+    #     cover_options=CustomCoverOptions(
+    #         logo_path_or_url="recipes_custom/logos/life.png"
+    #     ),
+    #     # enable_on=True,
+    #     enable_on=lambda recipe: every_x_hours(
+    #         last_run=recipe.last_run, hours=12, drift=0
+    #     ),
+    #     tags=["religion", "jewish"],
+    # ),
     # CustomOptionsRecipe(
     #     recipe="lithub",
     #     slug="lithub",
@@ -330,21 +330,21 @@ recipes: List[Recipe] = [
     #     overwrite_cover=True,
     #     cover_options=CustomCoverOptions(logo_path_or_url="recipes_custom/logos/ling.png"),
     # ),
-    CustomOptionsRecipe(
-        recipe="live-science",
-        slug="live-science",
-        src_ext="mobi",
-        target_ext=["epub"],
-        category="Science",
-        tags=["science"],
-        overwrite_cover=True,
-        enable_on=lambda recipe: every_x_days(
-            last_run=recipe.last_run, days=1, drift=0
-        ),
-        cover_options=CustomCoverOptions(
-            logo_path_or_url="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Live_Science_logo.svg/1024px-Live_Science_logo.svg.png"
-        ),
-    ),
+    # CustomOptionsRecipe(
+    #     recipe="live-science",
+    #     slug="live-science",
+    #     src_ext="mobi",
+    #     target_ext=["epub"],
+    #     category="Science",
+    #     tags=["science"],
+    #     overwrite_cover=True,
+    #     enable_on=lambda recipe: every_x_days(
+    #         last_run=recipe.last_run, days=1, drift=0
+    #     ),
+    #     cover_options=CustomCoverOptions(
+    #         logo_path_or_url="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Live_Science_logo.svg/1024px-Live_Science_logo.svg.png"
+    #     ),
+    # ),
     # CustomOptionsRecipe(
     #     recipe="maxfun-pods",
     #     slug="maxfun-pods",
@@ -467,21 +467,21 @@ recipes: List[Recipe] = [
     #         last_run=recipe.last_run, days=3, drift=0
     #     ),
     # ),
-    CustomOptionsRecipe(
-        recipe="npr",
-        slug="npr",
-        src_ext="mobi",
-        target_ext=["epub"],
-        category="News",
-        overwrite_cover=True,
-        tags=["news", "politics", "daily"],
-        enable_on=lambda recipe: every_x_days(
-            last_run=recipe.last_run, days=1, drift=0
-        ),
-        cover_options=CustomCoverOptions(
-            logo_path_or_url="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/National_Public_Radio_logo.svg/1024px-National_Public_Radio_logo.svg.png"
-        ),
-    ),
+    # CustomOptionsRecipe(
+    #     recipe="npr",
+    #     slug="npr",
+    #     src_ext="mobi",
+    #     target_ext=["epub"],
+    #     category="News",
+    #     overwrite_cover=True,
+    #     tags=["news", "politics", "daily"],
+    #     enable_on=lambda recipe: every_x_days(
+    #         last_run=recipe.last_run, days=1, drift=0
+    #     ),
+    #     cover_options=CustomCoverOptions(
+    #         logo_path_or_url="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/National_Public_Radio_logo.svg/1024px-National_Public_Radio_logo.svg.png"
+    #     ),
+    # ),
     CustomMonthlyRecipe(
         recipe="philosophy-now",
         slug="philosophy-now",
@@ -494,17 +494,17 @@ recipes: List[Recipe] = [
         ),
         tags=["philosophy", "commentary", "bimonthly"],
     ),
-    CustomMonthlyRecipe(
-        recipe="poetry",
-        slug="poetry",
-        src_ext="mobi",
-        target_ext=["epub"],
-        overwrite_cover=False,
-        category="Arts & Culture",
-        enable_on=first_n_days_of_month(7, -6) or last_n_days_of_month(7, -5),
-        # enable_on=True,
-        tags=["literature", "arts", "monthly"],
-    ),
+    # CustomMonthlyRecipe(
+    #     recipe="poetry",
+    #     slug="poetry",
+    #     src_ext="mobi",
+    #     target_ext=["epub"],
+    #     overwrite_cover=False,
+    #     category="Arts & Culture",
+    #     enable_on=first_n_days_of_month(7, -6) or last_n_days_of_month(7, -5),
+    #     # enable_on=True,
+    #     tags=["literature", "arts", "monthly"],
+    # ),
     CustomOptionsRecipe(
         recipe="quanta",
         slug="quanta",
@@ -518,19 +518,19 @@ recipes: List[Recipe] = [
             logo_path_or_url="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Quanta_Magazine_Logo_05.2022.svg/640px-Quanta_Magazine_Logo_05.2022.svg.png",
         ),
     ),
-    CustomOptionsRecipe(
-        recipe="science-daily",
-        slug="science-daily",
-        src_ext="mobi",
-        target_ext=["epub"],
-        category="Science",
-        overwrite_cover=True,
-        tags=["science", "tech", "daily"],
-        cover_options=CustomCoverOptions(
-            logo_path_or_url="recipes_custom/logos/science-daily.png"
-        ),
-        enable_on=True,
-    ),
+    # CustomOptionsRecipe(
+    #     recipe="science-daily",
+    #     slug="science-daily",
+    #     src_ext="mobi",
+    #     target_ext=["epub"],
+    #     category="Science",
+    #     overwrite_cover=True,
+    #     tags=["science", "tech", "daily"],
+    #     cover_options=CustomCoverOptions(
+    #         logo_path_or_url="recipes_custom/logos/science-daily.png"
+    #     ),
+    #     enable_on=True,
+    # ),
     CustomMonthlyRecipe(
         recipe="sci-am",
         slug="sci-am",
@@ -593,34 +593,34 @@ recipes: List[Recipe] = [
     #     ),
     #     tags=["news", "politics"],
     # ),
-    CustomOptionsRecipe(
-        recipe="them",
-        slug="them",
-        src_ext="mobi",
-        target_ext=["epub"],
-        category="News",
-        overwrite_cover=True,
-        tags=["trans", "lgbtq", "news"],
-        enable_on=True,
-        cover_options=CustomCoverOptions(
-            logo_path_or_url="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Them_wordmark.svg/1024px-Them_wordmark.svg.png"
-        ),
-    ),
-    CustomOptionsRecipe(
-        recipe="tpwky",
-        slug="tpwky",
-        src_ext="mobi",
-        target_ext=["epub"],
-        category="Podcasts",
-        overwrite_cover=True,
-        tags=["science"],
-        enable_on=lambda recipe: every_x_days(
-            last_run=recipe.last_run, days=1, drift=0
-        ),
-        cover_options=CustomCoverOptions(
-            logo_path_or_url="recipes_custom/logos/TPWKY.jpg"
-        ),
-    ),
+    # CustomOptionsRecipe(
+    #     recipe="them",
+    #     slug="them",
+    #     src_ext="mobi",
+    #     target_ext=["epub"],
+    #     category="News",
+    #     overwrite_cover=True,
+    #     tags=["trans", "lgbtq", "news"],
+    #     enable_on=True,
+    #     cover_options=CustomCoverOptions(
+    #         logo_path_or_url="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Them_wordmark.svg/1024px-Them_wordmark.svg.png"
+    #     ),
+    # ),
+    # CustomOptionsRecipe(
+    #     recipe="tpwky",
+    #     slug="tpwky",
+    #     src_ext="mobi",
+    #     target_ext=["epub"],
+    #     category="Podcasts",
+    #     overwrite_cover=True,
+    #     tags=["science"],
+    #     enable_on=lambda recipe: every_x_days(
+    #         last_run=recipe.last_run, days=1, drift=0
+    #     ),
+    #     cover_options=CustomCoverOptions(
+    #         logo_path_or_url="recipes_custom/logos/TPWKY.jpg"
+    #     ),
+    # ),
     # CustomMonthlyRecipe(
     #     recipe="wired",
     #     slug="wired",
