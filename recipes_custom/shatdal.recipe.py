@@ -100,40 +100,62 @@ class TheAdvocate(BasicNewsrackRecipe, BasicNewsRecipe):
     #     #     self.log(categories)
     #     return soup
 
-    def populate_article_metadata(self, article, soup, _):
-        if (not self.pub_date) or article.utctime > self.pub_date:
-            self.pub_date = article.utctime
-            self.title = format_title(_name, article.utctime)
-            article.title = format_title(article.title, article.utctime)
-        nyc = ZoneInfo("Asia/Kolkata")
-        nyc_dt_now = datetime.astimezone(datetime.now(), nyc)
-        nyc_dt = datetime.astimezone(article.utctime, nyc)
-        curr_datestring = datetime.strftime(nyc_dt_now, "%b %-d, %Y at %-I:%M %p %Z")
-        article_datestr = datetime.strftime(nyc_dt, "%b %-d, %Y at %-I:%M %p %Z")
-        source_link_div = soup.new_tag("div")
-        source_link_div["id"] = "article_source"
-        source_link = soup.new_tag("a")
-        source_link["href"] = article.url
-        source_link.string = article.url
-        source_link_div.append("This article was downloaded from ")
-        source_link_div.append(source_link)
-        source_link_div.append(" on ")
-        source_link_div.append(curr_datestring)
-        source_link_div.append(".")
-        hr = soup.new_tag("hr")
-        soup.append(hr)
-        soup.append(source_link_div)
-        header_soup = soup.new_tag("div")
-        header_soup["id"] = "meta_head"
-        section_raw = source_link["href"].split("/")[3]
-        section = section_raw.split("-")[0]
-        header_soup.append(section)
-        header_soup.append(" | ")
-        header_soup.append(article_datestr)
-        header_soup.append(" | ")
-        header_link = soup.new_tag("a")
-        header_link["href"] = article.url
-        header_link.append("View on Website")
-        header_soup.append(header_link)
-        headline = soup.find("h1")
-        headline.insert_before(header_soup)
+def populate_article_metadata(self, article, soup, _):
+    if (not self.pub_date) or article.utctime > self.pub_date:
+        self.pub_date = article.utctime
+        self.title = format_title(_name, article.utctime)
+        article.title = format_title(article.title, article.utctime)
+    nyc = ZoneInfo("Asia/Kolkata")
+    nyc_dt_now = datetime.astimezone(datetime.now(), nyc)
+    nyc_dt = datetime.astimezone(article.utctime, nyc)
+    curr_datestring = datetime.strftime(nyc_dt_now, "%b %-d, %Y at %-I:%M %p %Z")
+    article_datestr = datetime.strftime(nyc_dt, "%b %-d, %Y at %-I:%M %p %Z")
+    source_link_div = soup.new_tag("div")
+    source_link_div["id"] = "article_source"
+    source_link = soup.new_tag("a")
+    source_link["href"] = article.url
+    source_link.string = article.url
+    source_link_div.append("This article was downloaded from ")
+    source_link_div.append(source_link)
+    source_link_div.append(" on ")
+    source_link_div.append(curr_datestring)
+    source_link_div.append(".")
+    hr = soup.new_tag("hr")
+    soup.append(hr)
+    soup.append(source_link_div)
+    header_soup = soup.new_tag("div")
+    header_soup["id"] = "meta_head"
+    # Section extraction from URL
+    try:
+        section = article.url.split("/")[4]
+    except Exception:
+        section = "Unknown"
+    header_soup.append(section)
+    header_soup.append(" | ")
+    header_soup.append(article_datestr)
+    header_soup.append(" | ")
+    # Author extraction from soup
+    author_tag = soup.find("p", attrs={"data-sanitized-class": "text-muted mb-0 mt-1"})
+    if author_tag and "GS TEAM" in author_tag.text:
+        header_soup.append("Author: GS TEAM | ")
+    # Add link to original
+    header_link = soup.new_tag("a")
+    header_link["href"] = article.url
+    header_link.append("View on Website")
+    header_soup.append(header_link)
+    # Tags extraction
+    tags_div = soup.find("div", attrs={"data-sanitized-class": "news-tags mt-3"})
+    if tags_div:
+        tags_items = tags_div.find_all("div", recursive=False)
+        tags_list = [tag.text.strip() for tag in tags_items if tag.text.strip()]
+        if tags_list:
+            tags_soup = soup.new_tag("div")
+            tags_soup["class"] = "tags"
+            for tag in tags_list:
+                tag_item = soup.new_tag("span")
+                tag_item["class"] = "tags__item"
+                tag_item.append(tag)
+                tags_soup.append(tag_item)
+            header_soup.append(tags_soup)
+    headline = soup.find("h1")
+    headline.insert_before(header_soup)
