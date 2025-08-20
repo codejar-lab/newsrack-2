@@ -17,7 +17,7 @@ else:
     _masthead_prefix = f"file://{os.environ['HOME']}/git/newsrack/recipes_custom/logos"
 _masthead = f"{_masthead_prefix}/shatdal.jpg"
 
-_name = 'શતદલ'
+_name = 'SHATDAL | GS'
 
 
 class TheAdvocate(BasicNewsrackRecipe, BasicNewsRecipe):
