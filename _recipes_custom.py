@@ -37,7 +37,7 @@ class CustomOptionsRecipe(Recipe):
                 "--change-justification=left"
             ],
             "epub": [
-                "--output-profile=kobo",
+                "--output-profile=kindle_pw3",
                 # to fix the problem of images having a fixed height after conversion
                 # and use my preferred fonts
                 "--extra-css=body{font-family:InterVar,Lato,sans-serif;}img{height:auto !important;}",
@@ -92,6 +92,22 @@ recipes: List[Recipe] = [
         overwrite_cover=True,
         cover_options=CustomCoverOptions(
             logo_path_or_url="recipes_custom/logos/404.png"
+        ),
+        enable_on=False,
+        # enable_on=lambda recipe: every_x_hours(
+        #     last_run=recipe.last_run, hours=6, drift=0
+        # ),
+    ),
+    CustomOptionsRecipe(
+        recipe="shatdal",
+        slug="shatdal",
+        src_ext="mobi",
+        target_ext=["epub"],
+        category="News",
+        tags=["news"],
+        overwrite_cover=True,
+        cover_options=CustomCoverOptions(
+            logo_path_or_url="recipes_custom/logos/shatdal.jpg"
         ),
         enable_on=False,
         # enable_on=lambda recipe: every_x_hours(
